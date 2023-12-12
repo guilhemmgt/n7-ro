@@ -1,0 +1,34 @@
+#  GLPK model file created by SUN for RO teaching
+
+
+###############################  Model ###############################
+
+
+###############################  Sets  ###############################
+
+set PERSONNES;
+
+set TACHES;
+
+################### Variables ###################
+
+var affectation{i in PERSONNES, j in TACHES}, binary; 
+
+###################  Constants: Data to load   #########################
+
+param preferences{i in PERSONNES, j in TACHES}, >=0;
+
+################### Constraints ###################
+
+s.t. Unetacheparpersonne{i in PERSONNES}:
+  sum{j in TACHES} affectation[i,j] == 1;
+
+s.t. Unepersonnepartache{j in TACHES}:
+  sum{i in PERSONNES} affectation[i,j] == 1;
+
+###### Objective ######
+
+maximize satisfaction:
+		sum{i in PERSONNES} sum{j in TACHES} affectation[i,j] * preferences[i,j];    
+
+end;

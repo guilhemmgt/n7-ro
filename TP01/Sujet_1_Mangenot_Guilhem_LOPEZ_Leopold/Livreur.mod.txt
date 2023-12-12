@@ -1,0 +1,44 @@
+#  GLPK model file created by SUN for RO teaching
+
+
+###############################  Model ###############################
+
+
+###############################  Sets  ###############################
+
+param n;
+
+param DESTINATIONS{d in 1..n};
+
+################### Variables ###################
+
+var ordreLivraison{d in 1..n}, integer;
+var matriceLivraison{d1 in 1..n, d2 in 1..n}, binary;
+
+###################  Constants: Data to load   #########################
+
+param distances{d1 in 1..n, d2 in 1..n}, integer, >=0;
+
+################### Constraints ###################
+
+s.t. DepartAuMagasin:
+    ordreLivraison[1] == 1;
+
+s.t. LivraisonVersUniqueDestination{j in 1..n}:
+    sum{i in 1..n : i<>j} matriceLivraison[i,j] == 1;
+
+s.t. LivraisonDepuisUniqueDestination{i in 1..n}:
+    sum{j in 1..n : j<>i} matriceLivraison[i,j] == 1;
+
+s.t. ProgressionLivraison{i in 2..n, j in 2..n : j<>i}:
+    ordreLivraison[i] - ordreLivraison[j] + n * matriceLivraison[i,j] <= n-1;
+
+s.t. BornesOrdreLivraison{i in 1..n}:
+    1 <= ordreLivraison[i] <= n;
+
+###### Objective ######
+
+minimize distance:
+    sum{i in 1..n} sum{j in 1..n : i<>j} (distances[i,j] * matriceLivraison[i,j]);
+
+end;

@@ -1,0 +1,36 @@
+Problem:    
+Rows:       4
+Columns:    2 (2 integer, 0 binary)
+Non-zeros:  6
+Status:     INTEGER OPTIMAL
+Objective:  margeTotal = 438400 (MAXimum)
+
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 ContrainteTemporelle
+                               59.92                          60 
+     2 ContrainteSpatiale
+                                1500                        1500 
+     3 ContrainteMaterielle(Cargo)
+                                 232                         700 
+     4 ContrainteMaterielle(Standard)
+                                 920                      999999 
+
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 quantite(Cargo)
+                    *            232             0               
+     2 quantite(Standard)
+                    *            920             0               
+
+Integer feasibility conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output

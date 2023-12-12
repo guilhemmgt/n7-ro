@@ -1,0 +1,104 @@
+Problem:    
+Rows:       22
+Columns:    18 (6 integer, 6 binary)
+Non-zeros:  60
+Status:     INTEGER OPTIMAL
+Objective:  cout = 368 (MINimum)
+
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 LimitesStocks(F1,M1)
+                                   1                         2.5 
+     2 LimitesStocks(F1,M2)
+                                   0                           1 
+     3 LimitesStocks(F1,M3)
+                                   2                           2 
+     4 LimitesStocks(F2,M1)
+                                   1                           1 
+     5 LimitesStocks(F2,M2)
+                                   2                           2 
+     6 LimitesStocks(F2,M3)
+                                   0                           1 
+     7 DemandeSatisfaite(D1,F1)
+                                  -2            -2             = 
+     8 DemandeSatisfaite(D1,F2)
+                                   0            -0             = 
+     9 DemandeSatisfaite(D2,F1)
+                                  -1            -1             = 
+    10 DemandeSatisfaite(D2,F2)
+                                  -3            -3             = 
+    11 DefBinaireZero(D1,M1)
+                                   0                          -0 
+    12 DefBinaireZero(D1,M2)
+                                   0                          -0 
+    13 DefBinaireZero(D1,M3)
+                                  -1                          -0 
+    14 DefBinaireZero(D2,M1)
+                                  -1                          -0 
+    15 DefBinaireZero(D2,M2)
+                                  -1                          -0 
+    16 DefBinaireZero(D2,M3)
+                                   0                          -0 
+    17 DefBinaireUn(D1,M1)
+                                   0                          -0 
+    18 DefBinaireUn(D1,M2)
+                                   0                          -0 
+    19 DefBinaireUn(D1,M3)
+                                  -1                          -0 
+    20 DefBinaireUn(D2,M1)
+                                -1.5                          -0 
+    21 DefBinaireUn(D2,M2)
+                                  -1                          -0 
+    22 DefBinaireUn(D2,M3)
+                                   0                          -0 
+
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 livraison(D1,F1,M1)
+                                   0             0               
+     2 livraison(D2,F1,M1)
+                                   1             0               
+     3 livraison(D1,F1,M2)
+                                   0             0               
+     4 livraison(D2,F1,M2)
+                                   0             0               
+     5 livraison(D1,F1,M3)
+                                   2             0               
+     6 livraison(D2,F1,M3)
+                                   0             0               
+     7 livraison(D1,F2,M1)
+                                   0             0               
+     8 livraison(D2,F2,M1)
+                                   1             0               
+     9 livraison(D1,F2,M2)
+                                   0             0               
+    10 livraison(D2,F2,M2)
+                                   2             0               
+    11 livraison(D1,F2,M3)
+                                   0             0               
+    12 livraison(D2,F2,M3)
+                                   0             0               
+    13 livraisonBinaire(D1,M1)
+                    *              0             0             1 
+    14 livraisonBinaire(D1,M2)
+                    *              0             0             1 
+    15 livraisonBinaire(D1,M3)
+                    *              1             0             1 
+    16 livraisonBinaire(D2,M1)
+                    *              1             0             1 
+    17 livraisonBinaire(D2,M2)
+                    *              1             0             1 
+    18 livraisonBinaire(D2,M3)
+                    *              0             0             1 
+
+Integer feasibility conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output

@@ -1,0 +1,19 @@
+\* Problem: Fluides *\
+
+Minimize
+ cout: + livraison(M1,F1) + livraison(M1,F2) + 2 livraison(M2,F1)
+ + 3 livraison(M2,F2) + 3 livraison(M3,F1) + 2 livraison(M3,F2)
+
+Subject To
+ LimitesStocks(M1,F1): + livraison(M1,F1) <= 2
+ LimitesStocks(M1,F2): + livraison(M1,F2) <= 1
+ LimitesStocks(M2,F1): + livraison(M2,F1) <= 3
+ LimitesStocks(M2,F2): + livraison(M2,F2) <= 2
+ LimitesStocks(M3,F1): + livraison(M3,F1) <= 6
+ LimitesStocks(M3,F2): + livraison(M3,F2) <= 1
+ DemandeSatisfaite(F1): - livraison(M1,F1) - livraison(M2,F1)
+ - livraison(M3,F1) = -72
+ DemandeSatisfaite(F2): - livraison(M1,F2) - livraison(M2,F2)
+ - livraison(M3,F2) = -167
+
+End

@@ -1,0 +1,187 @@
+\* Problem: Livreur2 *\
+
+Minimize
+ distance: + matriceLivraison(2,1) + matriceLivraison(3,1)
+ + 10 matriceLivraison(4,1) + 12 matriceLivraison(5,1)
+ + 12 matriceLivraison(6,1) + matriceLivraison(1,2)
+ + matriceLivraison(3,2) + 8 matriceLivraison(4,2)
+ + 10 matriceLivraison(5,2) + 11 matriceLivraison(6,2)
+ + matriceLivraison(1,3) + matriceLivraison(2,3)
+ + 8 matriceLivraison(4,3) + 11 matriceLivraison(5,3)
+ + 10 matriceLivraison(6,3) + 10 matriceLivraison(1,4)
+ + 8 matriceLivraison(2,4) + 8 matriceLivraison(3,4)
+ + matriceLivraison(5,4) + matriceLivraison(6,4)
+ + 12 matriceLivraison(1,5) + 10 matriceLivraison(2,5)
+ + 11 matriceLivraison(3,5) + matriceLivraison(4,5)
+ + matriceLivraison(6,5) + 12 matriceLivraison(1,6)
+ + 11 matriceLivraison(2,6) + 10 matriceLivraison(3,6)
+ + matriceLivraison(4,6) + matriceLivraison(5,6)
+
+Subject To
+ DepartAuMagasin: + ordreLivraison(1) = 1
+ LivraisonVersUniqueDestination(1): + matriceLivraison(2,1)
+ + matriceLivraison(3,1) + matriceLivraison(4,1) + matriceLivraison(5,1)
+ + matriceLivraison(6,1) = 1
+ LivraisonVersUniqueDestination(2): + matriceLivraison(1,2)
+ + matriceLivraison(3,2) + matriceLivraison(4,2) + matriceLivraison(5,2)
+ + matriceLivraison(6,2) = 1
+ LivraisonVersUniqueDestination(3): + matriceLivraison(1,3)
+ + matriceLivraison(2,3) + matriceLivraison(4,3) + matriceLivraison(5,3)
+ + matriceLivraison(6,3) = 1
+ LivraisonVersUniqueDestination(4): + matriceLivraison(1,4)
+ + matriceLivraison(2,4) + matriceLivraison(3,4) + matriceLivraison(5,4)
+ + matriceLivraison(6,4) = 1
+ LivraisonVersUniqueDestination(5): + matriceLivraison(1,5)
+ + matriceLivraison(2,5) + matriceLivraison(3,5) + matriceLivraison(4,5)
+ + matriceLivraison(6,5) = 1
+ LivraisonVersUniqueDestination(6): + matriceLivraison(1,6)
+ + matriceLivraison(2,6) + matriceLivraison(3,6) + matriceLivraison(4,6)
+ + matriceLivraison(5,6) = 1
+ LivraisonDepuisUniqueDestination(1): + matriceLivraison(1,2)
+ + matriceLivraison(1,3) + matriceLivraison(1,4) + matriceLivraison(1,5)
+ + matriceLivraison(1,6) = 1
+ LivraisonDepuisUniqueDestination(2): + matriceLivraison(2,1)
+ + matriceLivraison(2,3) + matriceLivraison(2,4) + matriceLivraison(2,5)
+ + matriceLivraison(2,6) = 1
+ LivraisonDepuisUniqueDestination(3): + matriceLivraison(3,1)
+ + matriceLivraison(3,2) + matriceLivraison(3,4) + matriceLivraison(3,5)
+ + matriceLivraison(3,6) = 1
+ LivraisonDepuisUniqueDestination(4): + matriceLivraison(4,1)
+ + matriceLivraison(4,2) + matriceLivraison(4,3) + matriceLivraison(4,5)
+ + matriceLivraison(4,6) = 1
+ LivraisonDepuisUniqueDestination(5): + matriceLivraison(5,1)
+ + matriceLivraison(5,2) + matriceLivraison(5,3) + matriceLivraison(5,4)
+ + matriceLivraison(5,6) = 1
+ LivraisonDepuisUniqueDestination(6): + matriceLivraison(6,1)
+ + matriceLivraison(6,2) + matriceLivraison(6,3) + matriceLivraison(6,4)
+ + matriceLivraison(6,5) = 1
+ ProgressionLivraison(2,3): - ordreLivraison(3) + ordreLivraison(2)
+ + 6 matriceLivraison(2,3) <= 5
+ ProgressionLivraison(2,4): + ordreLivraison(2) - ordreLivraison(4)
+ + 6 matriceLivraison(2,4) <= 5
+ ProgressionLivraison(2,5): + ordreLivraison(2) - ordreLivraison(5)
+ + 6 matriceLivraison(2,5) <= 5
+ ProgressionLivraison(2,6): + ordreLivraison(2) - ordreLivraison(6)
+ + 6 matriceLivraison(2,6) <= 5
+ ProgressionLivraison(3,2): + ordreLivraison(3) - ordreLivraison(2)
+ + 6 matriceLivraison(3,2) <= 5
+ ProgressionLivraison(3,4): + ordreLivraison(3) - ordreLivraison(4)
+ + 6 matriceLivraison(3,4) <= 5
+ ProgressionLivraison(3,5): + ordreLivraison(3) - ordreLivraison(5)
+ + 6 matriceLivraison(3,5) <= 5
+ ProgressionLivraison(3,6): + ordreLivraison(3) - ordreLivraison(6)
+ + 6 matriceLivraison(3,6) <= 5
+ ProgressionLivraison(4,2): - ordreLivraison(2) + ordreLivraison(4)
+ + 6 matriceLivraison(4,2) <= 5
+ ProgressionLivraison(4,3): - ordreLivraison(3) + ordreLivraison(4)
+ + 6 matriceLivraison(4,3) <= 5
+ ProgressionLivraison(4,5): + ordreLivraison(4) - ordreLivraison(5)
+ + 6 matriceLivraison(4,5) <= 5
+ ProgressionLivraison(4,6): + ordreLivraison(4) - ordreLivraison(6)
+ + 6 matriceLivraison(4,6) <= 5
+ ProgressionLivraison(5,2): - ordreLivraison(2) + ordreLivraison(5)
+ + 6 matriceLivraison(5,2) <= 5
+ ProgressionLivraison(5,3): - ordreLivraison(3) + ordreLivraison(5)
+ + 6 matriceLivraison(5,3) <= 5
+ ProgressionLivraison(5,4): - ordreLivraison(4) + ordreLivraison(5)
+ + 6 matriceLivraison(5,4) <= 5
+ ProgressionLivraison(5,6): + ordreLivraison(5) - ordreLivraison(6)
+ + 6 matriceLivraison(5,6) <= 5
+ ProgressionLivraison(6,2): - ordreLivraison(2) + ordreLivraison(6)
+ + 6 matriceLivraison(6,2) <= 5
+ ProgressionLivraison(6,3): - ordreLivraison(3) + ordreLivraison(6)
+ + 6 matriceLivraison(6,3) <= 5
+ ProgressionLivraison(6,4): - ordreLivraison(4) + ordreLivraison(6)
+ + 6 matriceLivraison(6,4) <= 5
+ ProgressionLivraison(6,5): - ordreLivraison(5) + ordreLivraison(6)
+ + 6 matriceLivraison(6,5) <= 5
+ BornesOrdreLivraison(1): + ordreLivraison(1) - ~r_34 = 1
+ BornesOrdreLivraison(2): + ordreLivraison(2) - ~r_35 = 1
+ BornesOrdreLivraison(3): + ordreLivraison(3) - ~r_36 = 1
+ BornesOrdreLivraison(4): + ordreLivraison(4) - ~r_37 = 1
+ BornesOrdreLivraison(5): + ordreLivraison(5) - ~r_38 = 1
+ BornesOrdreLivraison(6): + ordreLivraison(6) - ~r_39 = 1
+
+Bounds
+ 0 <= ~r_34 <= 5
+ 0 <= ~r_35 <= 5
+ 0 <= ~r_36 <= 5
+ 0 <= ~r_37 <= 5
+ 0 <= ~r_38 <= 5
+ 0 <= ~r_39 <= 5
+ ordreLivraison(1) free
+ ordreLivraison(3) free
+ ordreLivraison(2) free
+ ordreLivraison(4) free
+ ordreLivraison(5) free
+ ordreLivraison(6) free
+ 0 <= matriceLivraison(2,1) <= 1
+ 0 <= matriceLivraison(3,1) <= 1
+ 0 <= matriceLivraison(4,1) <= 1
+ 0 <= matriceLivraison(5,1) <= 1
+ 0 <= matriceLivraison(6,1) <= 1
+ 0 <= matriceLivraison(1,2) <= 1
+ 0 <= matriceLivraison(3,2) <= 1
+ 0 <= matriceLivraison(4,2) <= 1
+ 0 <= matriceLivraison(5,2) <= 1
+ 0 <= matriceLivraison(6,2) <= 1
+ 0 <= matriceLivraison(1,3) <= 1
+ 0 <= matriceLivraison(2,3) <= 1
+ 0 <= matriceLivraison(4,3) <= 1
+ 0 <= matriceLivraison(5,3) <= 1
+ 0 <= matriceLivraison(6,3) <= 1
+ 0 <= matriceLivraison(1,4) <= 1
+ 0 <= matriceLivraison(2,4) <= 1
+ 0 <= matriceLivraison(3,4) <= 1
+ 0 <= matriceLivraison(5,4) <= 1
+ 0 <= matriceLivraison(6,4) <= 1
+ 0 <= matriceLivraison(1,5) <= 1
+ 0 <= matriceLivraison(2,5) <= 1
+ 0 <= matriceLivraison(3,5) <= 1
+ 0 <= matriceLivraison(4,5) <= 1
+ 0 <= matriceLivraison(6,5) <= 1
+ 0 <= matriceLivraison(1,6) <= 1
+ 0 <= matriceLivraison(2,6) <= 1
+ 0 <= matriceLivraison(3,6) <= 1
+ 0 <= matriceLivraison(4,6) <= 1
+ 0 <= matriceLivraison(5,6) <= 1
+
+Generals
+ ordreLivraison(1)
+ ordreLivraison(3)
+ ordreLivraison(2)
+ ordreLivraison(4)
+ ordreLivraison(5)
+ ordreLivraison(6)
+ matriceLivraison(2,1)
+ matriceLivraison(3,1)
+ matriceLivraison(4,1)
+ matriceLivraison(5,1)
+ matriceLivraison(6,1)
+ matriceLivraison(1,2)
+ matriceLivraison(3,2)
+ matriceLivraison(4,2)
+ matriceLivraison(5,2)
+ matriceLivraison(6,2)
+ matriceLivraison(1,3)
+ matriceLivraison(2,3)
+ matriceLivraison(4,3)
+ matriceLivraison(5,3)
+ matriceLivraison(6,3)
+ matriceLivraison(1,4)
+ matriceLivraison(2,4)
+ matriceLivraison(3,4)
+ matriceLivraison(5,4)
+ matriceLivraison(6,4)
+ matriceLivraison(1,5)
+ matriceLivraison(2,5)
+ matriceLivraison(3,5)
+ matriceLivraison(4,5)
+ matriceLivraison(6,5)
+ matriceLivraison(1,6)
+ matriceLivraison(2,6)
+ matriceLivraison(3,6)
+ matriceLivraison(4,6)
+ matriceLivraison(5,6)
+
+End

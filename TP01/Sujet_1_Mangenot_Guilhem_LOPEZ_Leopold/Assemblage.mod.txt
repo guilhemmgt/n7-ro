@@ -1,0 +1,44 @@
+#  GLPK model file created by SUN for RO teaching
+
+
+###############################  Model ###############################
+
+
+###############################  Sets  ###############################
+
+set VELOS;
+
+################### Variables ###################
+
+var quantite{i in VELOS}, integer, >=0; 
+
+###################  Constants: Data to load   #########################
+
+param marge{i in VELOS}; 
+
+param rendement{i in VELOS};
+param heurestravail;
+
+param surface{i in VELOS};
+param surfacehangar;
+
+param productionmax{i in VELOS};
+
+################### Constraints ###################
+
+s.t. ContrainteTemporelle:
+  sum{i in VELOS} rendement[i] * quantite[i] <= heurestravail;
+  
+s.t. ContrainteSpatiale:
+  sum{i in VELOS} surface[i] * quantite[i] <= surfacehangar;
+  
+s.t. ContrainteMaterielle{i in VELOS}:
+  quantite[i] <= productionmax[i];
+
+
+###### Objective ######
+
+maximize margeTotal: 
+		sum{i in VELOS} quantite[i] * marge[i]; 
+
+end;

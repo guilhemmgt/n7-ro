@@ -1,0 +1,25 @@
+data;
+
+set PERSONNES := 
+P1
+P2
+P3
+P4
+P5;
+
+set TACHES := 
+T1
+T2
+T3
+T4
+T5;
+
+param preferences: T1 T2 T3 T4 T5 :=
+P1 2 1 5 4 7
+P2 1 1 1 1 1
+P3 9 9 9 9 9
+P4 5 8 2 3 5
+P5 5 6 8 9 1;
+
+end;
+

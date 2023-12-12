@@ -1,0 +1,19 @@
+\* Problem: Assemblage vélo *\
+
+Maximize
+Marge: 700 nc + 300 ns 
+
+Subject To
+Temporelle : 0.06 nc + 0.05 ns <= 60
+Spatiale : 2.5 nc + 1 ns <= 1500
+Materielle : nc <= 700 
+
+Integer 
+nc 
+ns  
+
+End
+
+
+ 
+

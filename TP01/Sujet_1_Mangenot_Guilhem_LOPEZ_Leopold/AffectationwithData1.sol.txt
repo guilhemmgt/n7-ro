@@ -1,0 +1,94 @@
+Problem:    
+Rows:       10
+Columns:    25 (25 integer, 25 binary)
+Non-zeros:  50
+Status:     INTEGER OPTIMAL
+Objective:  satisfaction = 34 (MAXimum)
+
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 Unetacheparpersonne(P1)
+                                   1             1             = 
+     2 Unetacheparpersonne(P2)
+                                   1             1             = 
+     3 Unetacheparpersonne(P3)
+                                   1             1             = 
+     4 Unetacheparpersonne(P4)
+                                   1             1             = 
+     5 Unetacheparpersonne(P5)
+                                   1             1             = 
+     6 Unepersonnepartache(T1)
+                                   1             1             = 
+     7 Unepersonnepartache(T2)
+                                   1             1             = 
+     8 Unepersonnepartache(T3)
+                                   1             1             = 
+     9 Unepersonnepartache(T4)
+                                   1             1             = 
+    10 Unepersonnepartache(T5)
+                                   1             1             = 
+
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 affectation(P1,T1)
+                    *              0             0             1 
+     2 affectation(P1,T2)
+                    *              0             0             1 
+     3 affectation(P1,T3)
+                    *              0             0             1 
+     4 affectation(P1,T4)
+                    *              0             0             1 
+     5 affectation(P1,T5)
+                    *              1             0             1 
+     6 affectation(P2,T1)
+                    *              1             0             1 
+     7 affectation(P2,T2)
+                    *              0             0             1 
+     8 affectation(P2,T3)
+                    *              0             0             1 
+     9 affectation(P2,T4)
+                    *              0             0             1 
+    10 affectation(P2,T5)
+                    *              0             0             1 
+    11 affectation(P3,T1)
+                    *              0             0             1 
+    12 affectation(P3,T2)
+                    *              0             0             1 
+    13 affectation(P3,T3)
+                    *              1             0             1 
+    14 affectation(P3,T4)
+                    *              0             0             1 
+    15 affectation(P3,T5)
+                    *              0             0             1 
+    16 affectation(P4,T1)
+                    *              0             0             1 
+    17 affectation(P4,T2)
+                    *              1             0             1 
+    18 affectation(P4,T3)
+                    *              0             0             1 
+    19 affectation(P4,T4)
+                    *              0             0             1 
+    20 affectation(P4,T5)
+                    *              0             0             1 
+    21 affectation(P5,T1)
+                    *              0             0             1 
+    22 affectation(P5,T2)
+                    *              0             0             1 
+    23 affectation(P5,T3)
+                    *              0             0             1 
+    24 affectation(P5,T4)
+                    *              1             0             1 
+    25 affectation(P5,T5)
+                    *              0             0             1 
+
+Integer feasibility conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output

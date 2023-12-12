@@ -1,0 +1,60 @@
+Problem:    
+Rows:       8
+Columns:    6
+Non-zeros:  12
+Status:     UNDEFINED
+Objective:  cout = 0 (MINimum)
+
+   No.   Row name   St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+     1 LimitesStocks(M1,F1)
+                    B              0                           2 
+     2 LimitesStocks(M1,F2)
+                    B              0                           1 
+     3 LimitesStocks(M2,F1)
+                    B              0                           3 
+     4 LimitesStocks(M2,F2)
+                    B              0                           2 
+     5 LimitesStocks(M3,F1)
+                    B              0                           6 
+     6 LimitesStocks(M3,F2)
+                    B              0                           1 
+     7 DemandeSatisfaite(F1)
+                    B              0           -72             = 
+     8 DemandeSatisfaite(F2)
+                    B              0          -167             = 
+
+   No. Column name  St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+     1 livraison(M1,F1)
+                    NL             0             0                       < eps
+     2 livraison(M1,F2)
+                    NL             0             0                       < eps
+     3 livraison(M2,F1)
+                    NL             0             0                       < eps
+     4 livraison(M2,F2)
+                    NL             0             0                       < eps
+     5 livraison(M3,F1)
+                    NL             0             0                       < eps
+     6 livraison(M3,F2)
+                    NL             0             0                       < eps
+
+Karush-Kuhn-Tucker optimality conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 1.67e+02 on row 8
+        max.rel.err = 9.94e-01 on row 8
+        PRIMAL SOLUTION IS INFEASIBLE
+
+KKT.DE: max.abs.err = 3.00e+00 on column 4
+        max.rel.err = 7.50e-01 on column 4
+        DUAL SOLUTION IS WRONG
+
+KKT.DB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output

@@ -1,0 +1,17 @@
+\* Problem: Assemblage *\
+
+Maximize
+ margeTotal: + 700 quantite(Cargo) + 300 quantite(Standard)
+
+Subject To
+ ContrainteTemporelle: + 0.06 quantite(Cargo) + 0.05 quantite(Standard)
+ <= 60
+ ContrainteSpatiale: + 2.5 quantite(Cargo) + quantite(Standard) <= 1500
+ ContrainteMaterielle(Cargo): + quantite(Cargo) <= 700
+ ContrainteMaterielle(Standard): + quantite(Standard) <= 999999
+
+Generals
+ quantite(Cargo)
+ quantite(Standard)
+
+End

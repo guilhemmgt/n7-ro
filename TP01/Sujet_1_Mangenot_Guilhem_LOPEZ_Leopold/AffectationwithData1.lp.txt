@@ -1,0 +1,90 @@
+\* Problem: Affectation *\
+
+Maximize
+ satisfaction: + 2 affectation(P1,T1) + affectation(P1,T2)
+ + 5 affectation(P1,T3) + 4 affectation(P1,T4) + 7 affectation(P1,T5)
+ + affectation(P2,T1) + affectation(P2,T2) + affectation(P2,T3)
+ + affectation(P2,T4) + affectation(P2,T5) + 9 affectation(P3,T1)
+ + 9 affectation(P3,T2) + 9 affectation(P3,T3) + 9 affectation(P3,T4)
+ + 9 affectation(P3,T5) + 5 affectation(P4,T1) + 8 affectation(P4,T2)
+ + 2 affectation(P4,T3) + 3 affectation(P4,T4) + 5 affectation(P4,T5)
+ + 5 affectation(P5,T1) + 6 affectation(P5,T2) + 8 affectation(P5,T3)
+ + 9 affectation(P5,T4) + affectation(P5,T5)
+
+Subject To
+ Unetacheparpersonne(P1): + affectation(P1,T1) + affectation(P1,T2)
+ + affectation(P1,T3) + affectation(P1,T4) + affectation(P1,T5) = 1
+ Unetacheparpersonne(P2): + affectation(P2,T1) + affectation(P2,T2)
+ + affectation(P2,T3) + affectation(P2,T4) + affectation(P2,T5) = 1
+ Unetacheparpersonne(P3): + affectation(P3,T1) + affectation(P3,T2)
+ + affectation(P3,T3) + affectation(P3,T4) + affectation(P3,T5) = 1
+ Unetacheparpersonne(P4): + affectation(P4,T1) + affectation(P4,T2)
+ + affectation(P4,T3) + affectation(P4,T4) + affectation(P4,T5) = 1
+ Unetacheparpersonne(P5): + affectation(P5,T1) + affectation(P5,T2)
+ + affectation(P5,T3) + affectation(P5,T4) + affectation(P5,T5) = 1
+ Unepersonnepartache(T1): + affectation(P1,T1) + affectation(P2,T1)
+ + affectation(P3,T1) + affectation(P4,T1) + affectation(P5,T1) = 1
+ Unepersonnepartache(T2): + affectation(P1,T2) + affectation(P2,T2)
+ + affectation(P3,T2) + affectation(P4,T2) + affectation(P5,T2) = 1
+ Unepersonnepartache(T3): + affectation(P1,T3) + affectation(P2,T3)
+ + affectation(P3,T3) + affectation(P4,T3) + affectation(P5,T3) = 1
+ Unepersonnepartache(T4): + affectation(P1,T4) + affectation(P2,T4)
+ + affectation(P3,T4) + affectation(P4,T4) + affectation(P5,T4) = 1
+ Unepersonnepartache(T5): + affectation(P1,T5) + affectation(P2,T5)
+ + affectation(P3,T5) + affectation(P4,T5) + affectation(P5,T5) = 1
+
+Bounds
+ 0 <= affectation(P1,T1) <= 1
+ 0 <= affectation(P1,T2) <= 1
+ 0 <= affectation(P1,T3) <= 1
+ 0 <= affectation(P1,T4) <= 1
+ 0 <= affectation(P1,T5) <= 1
+ 0 <= affectation(P2,T1) <= 1
+ 0 <= affectation(P2,T2) <= 1
+ 0 <= affectation(P2,T3) <= 1
+ 0 <= affectation(P2,T4) <= 1
+ 0 <= affectation(P2,T5) <= 1
+ 0 <= affectation(P3,T1) <= 1
+ 0 <= affectation(P3,T2) <= 1
+ 0 <= affectation(P3,T3) <= 1
+ 0 <= affectation(P3,T4) <= 1
+ 0 <= affectation(P3,T5) <= 1
+ 0 <= affectation(P4,T1) <= 1
+ 0 <= affectation(P4,T2) <= 1
+ 0 <= affectation(P4,T3) <= 1
+ 0 <= affectation(P4,T4) <= 1
+ 0 <= affectation(P4,T5) <= 1
+ 0 <= affectation(P5,T1) <= 1
+ 0 <= affectation(P5,T2) <= 1
+ 0 <= affectation(P5,T3) <= 1
+ 0 <= affectation(P5,T4) <= 1
+ 0 <= affectation(P5,T5) <= 1
+
+Generals
+ affectation(P1,T1)
+ affectation(P1,T2)
+ affectation(P1,T3)
+ affectation(P1,T4)
+ affectation(P1,T5)
+ affectation(P2,T1)
+ affectation(P2,T2)
+ affectation(P2,T3)
+ affectation(P2,T4)
+ affectation(P2,T5)
+ affectation(P3,T1)
+ affectation(P3,T2)
+ affectation(P3,T3)
+ affectation(P3,T4)
+ affectation(P3,T5)
+ affectation(P4,T1)
+ affectation(P4,T2)
+ affectation(P4,T3)
+ affectation(P4,T4)
+ affectation(P4,T5)
+ affectation(P5,T1)
+ affectation(P5,T2)
+ affectation(P5,T3)
+ affectation(P5,T4)
+ affectation(P5,T5)
+
+End
